@@ -1,0 +1,76 @@
+{% include 'header.html' %}
+
+{% for compania_a in compania_a %}
+
+<form method="post" action="/update" enctype="multipart/form-data">
+
+    <div class="card">
+        <div class="card-header">
+            EDITAR SOLDADO
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Datos del soldado:
+            <p class="card-text">
+
+
+                <div class="form-group">
+                    <label for="txt1">NOMBRE:</label>
+                    <input id="txt1" value="{{compania_a[1] }}" class="form-control" type="text" name="txt1">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt2">APELLIDO PATERNO:</label>
+                    <input id="txt2" value="{{compania_a[2] }}" class="form-control" type="text" name="txt2">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt3">APELLIDO MATERNO:</label>
+                    <input id="txt3" value="{{compania_a[3] }}" class="form-control" type="text" name="txt3">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt4">PESO:</label>
+                    <input id="txt4" value="{{compania_a[4] }}" class="form-control" type="text" name="txt4">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt5">ESTATURA:</label>
+                    <input id="txt5" value="{{compania_a[5] }}" class="form-control" type="text" name="txt5">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt6">EDAD:</label>
+                    <input id="txt6" value="{{compania_a[6] }}" class="form-control" type="text" name="txt6">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt7">N° CARNET:</label>
+                    <input id="txt7" value="{{compania_a[7] }}" class="form-control" type="text" name="txt7">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt8">GRADO:</label>
+                    <input id="txt8" value="{{compania_a[8] }}" class="form-control" type="text" name="txt8">
+                </div>
+
+                
+                <input type="hidden" value="{{compania_a[0] }}" name="txt0" id="txt0">
+                <br>
+                
+                <br>
+                <br>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="GUARDAR">
+                    <a href="{{url_for('index')}}" class="btn btn-black">REGRESAR</a>
+                </div>
+            
+            </p>
+        </div>
+    </div>
+
+   
+    
+</form>
+    
+{% endfor %}
+{% include 'footer.html' %}
