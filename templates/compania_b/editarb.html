@@ -1,0 +1,76 @@
+{% include 'comb.html' %}
+
+{% for compania_b in compania_b %}
+
+<form method="post" action="/updateb" enctype="multipart/form-data">
+
+    <div class="card">
+        <div class="card-header">
+            EDITAR SOLDADO
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Datos del soldado:
+            <p class="card-text">
+
+
+                <div class="form-group">
+                    <label for="txt1b">NOMBRE:</label>
+                    <input id="txt1b" value="{{compania_b[1] }}" class="form-control" type="text" name="txt1b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt2b">APELLIDO PATERNO:</label>
+                    <input id="txt2b" value="{{compania_b[2] }}" class="form-control" type="text" name="txt2b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt3b">APELLIDO MATERNO:</label>
+                    <input id="txt3b" value="{{compania_b[3] }}" class="form-control" type="text" name="txt3b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt4b">PESO:</label>
+                    <input id="txt4b" value="{{compania_b[4] }}" class="form-control" type="text" name="txt4b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt5b">ESTATURA:</label>
+                    <input id="txt5b" value="{{compania_b[5] }}" class="form-control" type="text" name="txt5b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt6b">EDAD:</label>
+                    <input id="txt6b" value="{{compania_b[6] }}" class="form-control" type="text" name="txt6b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt7b">N° CARNET:</label>
+                    <input id="txt7b" value="{{compania_b[7] }}" class="form-control" type="text" name="txt7b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt8b">GRADO:</label>
+                    <input id="txt8b" value="{{compania_b[8] }}" class="form-control" type="text" name="txt8b">
+                </div>
+
+                
+                <input type="hidden" value="{{compania_b[0] }}" name="txt0b" id="txt0b">
+                <br>
+                
+                <br>
+                <br>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="GUARDAR">
+                    <a href="{{url_for('indexb')}}" class="btn btn-black">REGRESAR</a>
+                </div>
+            
+            </p>
+        </div>
+    </div>
+
+   
+    
+</form>
+    
+{% endfor %}
+{% include 'combc.html' %}

@@ -1,0 +1,87 @@
+{% include 'header.html' %}
+
+{% for info in info %}
+
+<form method="post" action="/updatef" enctype="multipart/form-data">
+
+    <div class="card">
+        <div class="card-header">
+            EDITAR SOLDADO
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Datos del soldado:
+            <p class="card-text">
+
+
+                <div class="form-group">
+                    <label for="txt1f">NOMBRE:</label>
+                    <input id="txt1f" value="{{info[1] }}" class="form-control" type="text" name="txt1f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt2f">APELLIDO PATERNO:</label>
+                    <input id="txt2f" value="{{info[2] }}" class="form-control" type="text" name="txt2f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt3f">APELLIDO MATERNO:</label>
+                    <input id="txt3f" value="{{info[3] }}" class="form-control" type="text" name="txt3f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt4f">GRADO:</label>
+                    <input id="txt4f" value="{{info[4] }}" class="form-control" type="text" name="txt4f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt5f">FECHA DE LLEGADA:</label>
+                    <input id="txt5f" value="{{info[5] }}" class="form-control" type="text" name="txt5f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt6f">FECHA DE SALIDA:</label>
+                    <input id="txt6f" value="{{info[6] }}" class="form-control" type="text" name="txt6f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt7f">PUESTO:</label>
+                    <input id="txt7f" value="{{info[7] }}" class="form-control" type="text" name="txt7f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt8f">N° CARNET:</label>
+                    <input id="txt8f" value="{{info[8] }}" class="form-control" type="text" name="txt8f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt9f">ESCUADRON:</label>
+                    <input id="txt9f" value="{{info[9] }}" class="form-control" type="text" name="txt9f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt10f">PATRULLA:</label>
+                    <input id="txt10f" value="{{info[10] }}" class="form-control" type="text" name="txt10f">
+                </div>
+
+
+                
+                <input type="hidden" value="{{info[0] }}" name="txt0f" id="txt0f">
+                <br>
+                
+                <br>
+                <br>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="GUARDAR">
+                    <a href="{{url_for('indexf')}}" class="btn btn-black">REGRESAR</a>
+                </div>
+            
+            </p>
+        </div>
+    </div>
+
+   
+    
+</form>
+    
+{% endfor %}
+{% include 'footer.html' %}

@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+    <title>INICIO</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <a class="navbar-brand">DATOS DEL SOLDADO</a>
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+               
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container"> 
+
+        <br><br>
+        <a href="{{ url_for('inicio')}} " class="btn btn-danger">
+
+            cerrar sesión
+        
+        </a>
+
+        <br><br>
+
+       
+    
+
+        <table class="table table-light">
+            <thead class="thead-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido paterno</th>
+                    <th>Apellido materno</th>
+                    <th>Grado</th>
+                    <th>Fecha de llegada</th>
+                    <th>Fecha de salida</th>
+                    <th>Puesto</th>
+                    <th>N° carnet</th>
+                    <th>Escuadron</th>
+                    <th>Patrulla</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for info in info   %}
+                    
+                <tr>
+                    <td>{{info[0] }}</td>
+                    <td>{{info[1] }}</td>
+                    <td>{{info[2] }}</td>
+                    <td>{{info[3] }}</td>
+                    <td>{{info[4] }}</td>
+                    <td>{{info[5] }}</td>
+                    <td>{{info[6] }}</td>
+                    <td>{{info[7] }}</td>
+                    <td>{{info[8] }}</td>
+                    <td>{{info[9] }}</td>
+                    <td>{{info[10] }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html> 
+
+
+

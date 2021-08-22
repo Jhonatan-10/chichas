@@ -1,0 +1,51 @@
+{% include 'header.html' %}
+    
+    <a href="{{ url_for('crearf')}} " class="btn btn-success">
+
+        Ingresar nuevo dato
+
+    </a>
+    <br>
+    <br>
+
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido paterno</th>
+                <th>Apellido materno</th>
+                <th>Grado</th>
+                <th>Fecha de llegada</th>
+                <th>Fecha de salida</th>
+                <th>Puesto</th>
+                <th>N° carnet</th>
+                <th>Escuadron</th>
+                <th>Patrulla</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for info in info   %}
+                
+            <tr>
+                <td>{{info[0] }}</td>
+                <td>{{info[1] }}</td>
+                <td>{{info[2] }}</td>
+                <td>{{info[3] }}</td>
+                <td>{{info[4] }}</td>
+                <td>{{info[5] }}</td>
+                <td>{{info[6] }}</td>
+                <td>{{info[7] }}</td>
+                <td>{{info[8] }}</td>
+                <td>{{info[9] }}</td>
+                <td>{{info[10] }}</td>
+                <td>  <a onclick="return " class="btn btn-warning" href="/editf/{{info[0] }}">Editar</a> | 
+                      <a onclick="return confirm('Desea borrar el dato ')" class="btn btn-danger" href="/destroyf/{{info[0] }}">Borrar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% include 'footer.html' %}

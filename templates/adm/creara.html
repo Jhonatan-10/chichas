@@ -1,0 +1,63 @@
+{% include 'header.html' %}
+
+{% with messages= get_flashed_messages()%}
+
+    {% if messages %}
+
+        <div class="alert alert-danger" rote="alert">
+        {% for message in messages %}
+            {{ message}}
+        {% endfor %}
+
+        </div>
+
+    {% endif %}
+{% endwith %}
+
+<BR></BR>
+<form method="post" action="/storea" enctype="multipart/form-data">
+
+    <div class="card">
+            <div class="card-header">
+                DATOS DEL SOLDADO
+            </div>
+        <div class="card-body">
+            <h5 class="card-title">INGRESE LOS DATOS</h5>
+            <p class="card-text">
+
+                <div class="form-group">
+                    <label for="txt1a">NOMBRE:</label>
+                    <input id="txt1a" class="form-control" type="text" name="txt1a">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt2a">APELLIDO:</label>
+                    <input id="txt2a" class="form-control" type="text" name="txt2a">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt3a">Grado:</label>
+                    <input id="txt3a" class="form-control" type="text" name="txt3a">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt4a">Compania:</label>
+                    <input id="txt4a" class="form-control" type="float" name="txt4a">
+                </div>
+
+                
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="GUARDAR">
+                    <a href="{{url_for('indexa')}}" class="btn btn-black">REGRESAR</a>
+                </div>
+                
+
+            </p>
+        </div>
+    </div>
+
+   
+    
+</form>
+{% include 'footer.html' %}

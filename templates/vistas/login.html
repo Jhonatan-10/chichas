@@ -1,0 +1,129 @@
+
+
+<!--<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="templates/vistas/css/login.css">
+
+</head>
+
+  <body>
+
+
+    <form method="post" action="/log" enctype="multipart/form-data">
+
+      <div class="card">
+            <div class="card-header">
+              <h1><i> INGRESE SUS DATOS DE USUARIO</i></h1>
+            </div>
+          <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"
+
+
+                <div class="form-group">
+                  <label for="txto1">USUARIO:</label><BR>
+                  <input id="txto1" class="form-control" placeholder="usuario" type="text" name="txto1" required>
+              </div>
+              <BR></BR>
+
+              <div class="form-group">
+                  <label for="txto2">CONTRASEÑA:</label><BR>
+                  <input id="txto2" class="form-control" type="password" placeholder="contraseña"  name="txto2" required>
+              </div>
+
+                    
+                  
+                  <br>
+                  <br>
+                          
+
+                  <div class="form-group">
+                      <input  type="submit" class="btn btn-success" value="ingresar"> 
+                      <a href="{{url_for('inicio')}}" class="btn btn-black">REGRESAR</a>
+                      
+                  </div>
+          </div>
+      </div>
+                  
+                    
+                      
+    </form>
+ </body>
+
+</html>-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.1/css/bulma.min.css">
+
+</head>
+
+<body>
+    <section class="section">
+        <div class="columns">
+            <div class="column is-one-third is-offset-one-third">
+                <h1 class="is-size-1">Bienvenido</h1>
+                <form action="/log" method="post">
+                    <label for="txto1">Usuario</label>
+                    <div class="control">
+                        <input autofocus required type="disabledTextInput" class="input" placeholder="Ingrese Usuario" id="txto1"
+                            name="txto1">
+                    </div>
+                    <div class="control">
+                        <label for="txto2">Contraseña</label>
+                        <input required type="password" class="input" placeholder="Ingrese Contraseña" id="txto2"
+                            name="txto2">
+                    </div>
+
+                  
+                    <div class="form-group">
+                      <input  type="submit" class="button is-success mt-2"" value="INGRESAR"> 
+                      <a href="{{url_for('inicio')}}" class="button is-black mt-2"">REGRESAR</a>
+                      
+                  </div>
+                
+                    {# Mostrar mensajes / errores si es que existen #}
+                    {% with mensajes_flash = get_flashed_messages() %}
+                    {% if mensajes_flash %}
+                    <div class="notification is-danger mt-2">
+                        {% for mensaje in mensajes_flash %}
+                        <li>{{ mensaje }}</li>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+
+
+            
+            
+          
+ 
+              
+  
+
+
+              
+              

@@ -1,48 +1,56 @@
 
-    {% include 'header.html' %}
-    <br/>
-    <a href="{{ url_for('create')}} " class="btn btn-success">
 
-        Ingresar nuevo soldado
+{% include 'coma.html' %}
 
-    </a>
-    <br>
-    <br>
+            <br/>
+            <a href="{{ url_for('crear')}} " class="btn btn-success"> 
+            
 
-    <table class="table table-light">
-        <thead class="thead-light">
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Apellido paterno</th>
-                <th>Apellido materno</th>
-                <th>Peso</th>
-                <th>Estatura</th>
-                <th>Edad</th>
-                <th>N° carnet</th>
-                <th>Grado</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for compania_a in compania_a   %}
-                
-            <tr>
-                <td>{{compania_a[0] }}</td>
-                <td>{{compania_a[1] }}</td>
-                <td>{{compania_a[2] }}</td>
-                <td>{{compania_a[3] }}</td>
-                <td>{{compania_a[4] }}</td>
-                <td>{{compania_a[5] }}</td>
-                <td>{{compania_a[6] }}</td>
-                <td>{{compania_a[7] }}</td>
-                <td>{{compania_a[8] }}</td>
-                <td>  <a onclick="return confirm('Desea editar el dato ')" class="btn btn-warning" href="/edit/{{compania_a[0] }}">Editar</a> | 
-                    <a onclick="return confirm('Desea borrar el dato ')" class="btn btn-danger" href="/destroy/{{compania_a[0] }}">Borrar</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+                Ingresar nuevo soldado
 
-    {% include 'footer.html' %}
+            </a>
+            <a href="{{ url_for('login')}} " class="btn btn-danger"> 
+            
+
+                serrar secion
+
+            </a>
+            <br>
+            <br>
+            
+            <table class="table table-light">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido paterno</th>
+                        <th>Apellido materno</th>
+                        <th>Peso</th>
+                        <th>Estatura</th>
+                        <th>Edad</th>
+                        <th>N° carnet</th>
+                        <th>Grado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for compania_a in compania_a   %}
+                        
+                    <tr>
+                        <td>{{compania_a[0] }}</td>
+                        <td>{{compania_a[1] }}</td>
+                        <td>{{compania_a[2] }}</td>
+                        <td>{{compania_a[3] }}</td>
+                        <td>{{compania_a[4] }}</td>
+                        <td>{{compania_a[5] }}</td>
+                        <td>{{compania_a[6] }}</td>
+                        <td>{{compania_a[7] }}</td>
+                        <td>{{compania_a[8] }}</td>
+                        <td>  <a onclick="return " class="btn btn-warning" href="/edit/{{compania_a[0] }}">Editar</a> | 
+                            <a onclick="return confirm('Desea borrar el dato ')" class="btn btn-danger" href="/destroy/{{compania_a[0] }}">Borrar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+{% include 'comac.html' %}

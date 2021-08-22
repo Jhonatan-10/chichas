@@ -1,4 +1,4 @@
-{% include 'header.html' %}
+{% include 'coma.html' %}
 
 {% with messages= get_flashed_messages()%}
 
@@ -18,9 +18,9 @@
 <form method="post" action="/store" enctype="multipart/form-data">
 
     <div class="card">
-        <div class="card-header">
-            DATOS DEL SOLDADO
-        </div>
+            <div class="card-header">
+                DATOS DEL SOLDADO
+            </div>
         <div class="card-body">
             <h5 class="card-title">INGRESE LOS DATOS</h5>
             <p class="card-text">
@@ -42,22 +42,22 @@
 
                 <div class="form-group">
                     <label for="txt4">PESO:</label>
-                    <input id="txt4" class="form-control" type="text" name="txt4">
+                    <input id="txt4" class="form-control" type="float" name="txt4">
                 </div>
 
                 <div class="form-group">
                     <label for="txt5">ESTATURA:</label>
-                    <input id="txt5" class="form-control" type="text" name="txt5">
+                    <input id="txt5" class="form-control" type="float" name="txt5">
                 </div>
 
                 <div class="form-group">
                     <label for="txt6">EDAD:</label>
-                    <input id="txt6" class="form-control" type="text" name="txt6">
+                    <input id="txt6" class="form-control" type="int" name="txt6">
                 </div>
 
                 <div class="form-group">
                     <label for="txt7">N° CARNET:</label>
-                    <input id="txt7" class="form-control" type="text" name="txt7">
+                    <input id="txt7" class="form-control" type="int" name="txt7">
                 </div>
 
                 <div class="form-group">
@@ -78,4 +78,4 @@
    
     
 </form>
-{% include 'footer.html' %}
+{% include 'comac.html' %}

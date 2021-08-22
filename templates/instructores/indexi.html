@@ -1,0 +1,39 @@
+{% include 'header.html' %}
+
+<a href="{{ url_for('creari')}} " class="btn btn-success">
+
+    Ingresar nuevo instructor
+
+</a>
+<br>
+<br>
+
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Grado</th>
+            <th>Compania</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for instructores in instructores   %}
+            
+        <tr>
+            <td>{{instructores[0] }}</td>
+            <td>{{instructores[1] }}</td>
+            <td>{{instructores[2] }}</td>
+            <td>{{instructores[3] }}</td>
+            <td>{{instructores[4] }}</td>
+            <td>  <a onclick="return " class="btn btn-warning" href="/editi/{{instructores[0] }}">Editar</a> | 
+                  <a onclick="return confirm('Desea borrar el dato ')" class="btn btn-danger" href="/destroyi/{{instructores[0] }}">Borrar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% include 'footer.html' %}

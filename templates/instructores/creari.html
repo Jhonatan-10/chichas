@@ -1,0 +1,63 @@
+{% include 'header.html' %}
+
+{% with messages= get_flashed_messages()%}
+
+    {% if messages %}
+
+        <div class="alert alert-danger" rote="alert">
+        {% for message in messages %}
+            {{ message}}
+        {% endfor %}
+
+        </div>
+
+    {% endif %}
+{% endwith %}
+
+<BR></BR>
+<form method="post" action="/storei" enctype="multipart/form-data">
+
+    <div class="card">
+            <div class="card-header">
+                DATOS DEL SOLDADO
+            </div>
+        <div class="card-body">
+            <h5 class="card-title">INGRESE LOS DATOS</h5>
+            <p class="card-text">
+
+                <div class="form-group">
+                    <label for="txt1i">NOMBRE:</label>
+                    <input id="txt1i" class="form-control" type="text" name="txt1i">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt2i">APELLIDO:</label>
+                    <input id="txt2i" class="form-control" type="text" name="txt2i">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt3i">Grado:</label>
+                    <input id="txt3i" class="form-control" type="text" name="txt3i">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt4i">Compania:</label>
+                    <input id="txt4i" class="form-control" type="float" name="txt4i">
+                </div>
+
+                
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="GUARDAR">
+                    <a href="{{url_for('indexi')}}" class="btn btn-black">REGRESAR</a>
+                </div>
+                
+
+            </p>
+        </div>
+    </div>
+
+   
+    
+</form>
+{% include 'footer.html' %}

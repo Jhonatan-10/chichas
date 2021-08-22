@@ -1,0 +1,91 @@
+{% include 'header.html' %}
+
+{% with messages= get_flashed_messages()%}
+
+    {% if messages %}
+
+        <div class="alert alert-danger" rote="alert">
+        {% for message in messages %}
+            {{ message}}
+        {% endfor %}
+
+        </div>
+
+    {% endif %}
+{% endwith %}
+
+<BR></BR>
+<form method="post" action="/storef" enctype="multipart/form-data">
+
+    <div class="card">
+            <div class="card-header">
+                DATOS DEL SOLDADO
+            </div>
+        <div class="card-body">
+            <h5 class="card-title">INGRESE LOS DATOS</h5>
+            <p class="card-text">
+
+                <div class="form-group">
+                    <label for="txt1f">NOMBRE:</label>
+                    <input id="txt1f" class="form-control" type="text" name="txt1f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt2f">APELLIDO PATERNO:</label>
+                    <input id="txt2f" class="form-control" type="text" name="txt2f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt3f">APELLIDO MATERNO:</label>
+                    <input id="txt3f" class="form-control" type="text" name="txt3f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt4f">Grado:</label>
+                    <input id="txt4f" class="form-control" type="float" name="txt4f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt5f">fecha de llegada:</label>
+                    <input id="txt5f" class="form-control" type="float" name="txt5f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt6f">fecha de salida:</label>
+                    <input id="txt6f" class="form-control" type="int" name="txt6f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt7f">Puesto:</label>
+                    <input id="txt7f" class="form-control" type="int" name="txt7f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt8f">N° carnet:</label>
+                    <input id="txt8f" class="form-control" type="text" name="txt8f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt9f">Escuadron:</label>
+                    <input id="txt9f" class="form-control" type="text" name="txt9f">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt10f">Patrulla:</label>
+                    <input id="txt10f" class="form-control" type="text" name="txt10f">
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="GUARDAR">
+                    <a href="{{url_for('indexf')}}" class="btn btn-black">REGRESAR</a>
+                </div>
+                
+
+            </p>
+        </div>
+    </div>
+
+   
+    
+</form>
+{% include 'footer.html' %}

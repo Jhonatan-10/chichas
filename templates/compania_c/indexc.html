@@ -1,0 +1,52 @@
+{% include 'comc.html' %}
+<br/>
+<a href="{{ url_for('crearc')}} " class="btn btn-success">
+
+    Ingresar nuevo soldado
+
+</a>
+<a href="{{ url_for('login')}} " class="btn btn-danger">
+
+    cerrar secion
+
+</a>
+<br>
+<br>
+
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido paterno</th>
+            <th>Apellido materno</th>
+            <th>Peso</th>
+            <th>Estatura</th>
+            <th>Edad</th>
+            <th>N° carnet</th>
+            <th>Grado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for compania_c in compania_c   %}
+            
+        <tr>
+            <td>{{compania_c[0] }}</td>
+            <td>{{compania_c[1] }}</td>
+            <td>{{compania_c[2] }}</td>
+            <td>{{compania_c[3] }}</td>
+            <td>{{compania_c[4] }}</td>
+            <td>{{compania_c[5] }}</td>
+            <td>{{compania_c[6] }}</td>
+            <td>{{compania_c[7] }}</td>
+            <td>{{compania_c[8] }}</td>
+            <td>  <a onclick="return " class="btn btn-warning" href="/editc/{{compania_c[0] }}">Editar</a> | 
+                  <a onclick="return confirm('Desea borrar el dato ')" class="btn btn-danger" href="/destroyc/{{compania_c[0] }}">Borrar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% include 'comcc.html' %}

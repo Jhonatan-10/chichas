@@ -1,0 +1,81 @@
+{% include 'comb.html' %}
+
+{% with messages= get_flashed_messages()%}
+
+    {% if messages %}
+
+        <div class="alert alert-danger" rote="alert">
+        {% for message in messages %}
+            {{ message}}
+        {% endfor %}
+
+        </div>
+
+    {% endif %}
+{% endwith %}
+
+<BR></BR>
+<form method="post" action="/storeb" enctype="multipart/form-data">
+
+    <div class="card">
+            <div class="card-header">
+                DATOS DEL SOLDADO
+            </div>
+        <div class="card-body">
+            <h5 class="card-title">INGRESE LOS DATOS</h5>
+            <p class="card-text">
+
+                <div class="form-group">
+                    <label for="txt1b">NOMBRE:</label>
+                    <input id="txt1b" class="form-control" type="text" name="txt1b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt2b">APELLIDO PATERNO:</label>
+                    <input id="txt2b" class="form-control" type="text" name="txt2b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt3b">APELLIDO MATERNO:</label>
+                    <input id="txt3b" class="form-control" type="text" name="txt3b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt4b">PESO:</label>
+                    <input id="txt4b" class="form-control" type="float" name="txt4b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt5b">ESTATURA:</label>
+                    <input id="txt5b" class="form-control" type="float" name="txt5b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt6b">EDAD:</label>
+                    <input id="txt6b" class="form-control" type="int" name="txt6b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt7b">N° CARNET:</label>
+                    <input id="txt7b" class="form-control" type="int" name="txt7b">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt8b">GRADO:</label>
+                    <input id="txt8b" class="form-control" type="text" name="txt8b">
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="GUARDAR">
+                    <a href="{{url_for('indexb')}}" class="btn btn-black">REGRESAR</a>
+                </div>
+                
+
+            </p>
+        </div>
+    </div>
+
+   
+    
+</form>
+{% include 'combc.html' %}

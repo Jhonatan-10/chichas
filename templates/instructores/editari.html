@@ -1,0 +1,56 @@
+{% include 'header.html' %}
+
+{% for instructores in instructores %}
+
+<form method="post" action="/updatei" enctype="multipart/form-data">
+
+    <div class="card">
+        <div class="card-header">
+            EDITAR SOLDADO
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Datos del soldado:
+            <p class="card-text">
+
+
+                <div class="form-group">
+                    <label for="txt1i">NOMBRE:</label>
+                    <input id="txt1i" value="{{instructores[1] }}" class="form-control" type="text" name="txt1i">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt2i">APELLIDO:</label>
+                    <input id="txt2i" value="{{instructores[2] }}" class="form-control" type="text" name="txt2i">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt3i">Grado:</label>
+                    <input id="txt3i" value="{{instructores[3] }}" class="form-control" type="text" name="txt3i">
+                </div>
+
+                <div class="form-group">
+                    <label for="txt4i">Compania:</label>
+                    <input id="txt4i" value="{{instructores[4] }}" class="form-control" type="text" name="txt4i">
+                </div>
+
+            
+                <input type="hidden" value="{{instructores[0] }}" name="txt0i" id="txt0i">
+                <br>
+                
+                <br>
+                <br>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="GUARDAR">
+                    <a href="{{url_for('indexi')}}" class="btn btn-black">REGRESAR</a>
+                </div>
+            
+            </p>
+        </div>
+    </div>
+
+   
+    
+</form>
+    
+{% endfor %}
+{% include 'footer.html' %}

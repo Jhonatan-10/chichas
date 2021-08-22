@@ -1,0 +1,140 @@
+
+
+<!--<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>login</title>
+        <link rel="stylesheet" href="templates/vistas/css/inicio.css">
+        <link rel="stylesheet" href="css/cabesera.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    </head>
+    <body>
+
+
+
+            <form method="post" action="/inic" enctype="multipart/form-data">
+
+                <div class="card">
+                    <div class="card-header">
+                    <H1>DATOS DEL SOLDADO</H1> 
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">INGRESE LOS DATOS</h5>
+                        <p class="card-text">
+
+                            <div class="form-group">
+                                <label for="txt1">NOMBRE:</label>
+                                <input id="txt11" class="form-control" type="text" name="txt11">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txt21">APELLIDO PATERNO:</label>
+                                <input id="txt21" class="form-control" type="text" name="txt21">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txt31">APELLIDO MATERNO:</label>
+                                <input id="txt31" class="form-control" type="text" name="txt31">
+                            </div>
+
+                
+
+                            <div class="form-group">
+                                <label for="txt71">N° CARNET:</label>
+                                <input id="txt71" class="form-control" type="int" name="txt71">
+                            </div>
+
+                            <br>
+                            <br>
+
+                        
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-success" value="GUARDAR">
+                                <a href="{{url_for('login')}}" class="btn btn-black">iniciar secion adm</a>
+                            </div>
+                            
+
+                        </p>
+                    </div>
+                </div>
+
+            
+                
+            </form>
+    </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Soldados</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.1/css/bulma.min.css">
+
+</head>
+
+<body>
+    <section class="section">
+        <div class="columns">
+            <div class="column is-one-third is-offset-one-third">
+                <h1 class="is-size-1">INFORMACIÓN SOLDADOS RC-7</h1>
+                <form action="/inic" method="post">
+
+                    <div class="control">
+                        <label for="txt11">Nombre:</label>
+                        <input required type="text" class="input" placeholder="Ingrese Nombre" id="txt11"
+                            name="txt11">
+                    </div>
+
+                    <div class="control">
+                        <label for="txt21">Apellido pateno:</label>
+                        <input required type="text" class="input" placeholder="Ingrese Apellidos" id="txt21"
+                            name="txt21">
+                    </div>
+
+                    <div class="control">
+                        <label for="txt31">Apellido materno:</label>
+                        <input required type="text" class="input" placeholder="Ingrese Apellidos" id="txt31"
+                            name="txt31">
+                    </div>
+
+                    <div class="control">
+                        <label for="txt71">C.I.:</label>
+                        <input required type="number"  class="input" placeholder="Ingrese Carnet de identidad" id="txt71"
+                            name="txt71">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="button is-success mt-2" value="BUSCAR">
+                        <a href="{{url_for('login')}}" class="button is-black mt-2">INICIAR SESIÓN ADM</a>
+                    </div>
+
+                    
+                    
+                    {# Mostrar mensajes / errores si es que existen #}
+                    {% with mensajes_flash = get_flashed_messages() %}
+                    {% if mensajes_flash %}
+                    <div class="notification is-danger mt-2">
+                        {% for mensaje in mensajes_flash %}
+                        <li>{{ mensaje }}</li>
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+
