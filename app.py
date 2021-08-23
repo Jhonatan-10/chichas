@@ -15,8 +15,40 @@ app.config['MYSQL_DATABASE_DB']='rc 7 chichas'
 mysql.init_app(app)
 
 
+
+
 @app.route('/')
 def index():
+
+    return render_template('vistas/index.html')
+
+@app.route('/inic', methods=['POST'])
+def inic():
+
+    _nombre= request.form['txt11']
+  
+    _carnet= request.form['txt71']
+   
+
+    sql =("SELECT * FROM `info` WHERE Nombre= %s AND carnet = %s ")
+    datos=(_nombre,_carnet)
+    conn= mysql.connect()
+    cursor=conn.cursor()
+    cursor.execute(sql,datos)
+    info= cursor.fetchall()
+    conn.commit()
+    
+    if info:
+        print(info)
+        return render_template('vistas/informe.html', info= info)
+    else:
+        flash("verifique sus datos por fabor por favor")
+        return render_template("vistas/index.html")
+
+
+
+@app.route('/indexaa')
+def indexaa():
 
     sql ="SELECT * FROM `companía a` ;"
     conn= mysql.connect()
@@ -28,7 +60,7 @@ def index():
 
 
 
-    return render_template('soldados/index.html', compania_a= compania_a)
+    return render_template('soldados/indexaa.html', compania_a= compania_a)
 
 @app.route('/indexf')
 def indexf():
@@ -113,7 +145,7 @@ def destroy(id):
     cursor=conn.cursor()
     cursor.execute("DELETE FROM `companía a` WHERE `companía a`.`Id_A`=%s",(id))
     conn.commit()
-    return redirect('/')
+    return redirect('/indexaa')
 
 
 @app.route('/destroyf/<int:id>')
@@ -201,7 +233,7 @@ def update():
     conn.commit()
 
 
-    return redirect('/')
+    return redirect('/indexaa')
 
 
 @app.route('/editf/<int:id>')
@@ -436,7 +468,7 @@ def storage():
     cursor.execute(sql,datos)
     conn.commit()
 
-    return redirect('/')
+    return redirect('/indexaa')
 
 
 
@@ -641,33 +673,6 @@ def storagec():
 
 
 
-@app.route('/inicio')
-def inicio():
-
-    return render_template('vistas/inicio.html')
-
-@app.route('/inic', methods=['POST'])
-def inic():
-
-    _nombre= request.form['txt11']
-  
-    _carnet= request.form['txt71']
-   
-
-    sql =("SELECT * FROM `info` WHERE Nombre= %s AND carnet = %s ")
-    datos=(_nombre,_carnet)
-    conn= mysql.connect()
-    cursor=conn.cursor()
-    cursor.execute(sql,datos)
-    info= cursor.fetchall()
-    conn.commit()
-    
-    if info:
-        print(info)
-        return render_template('vistas/informe.html', info= info)
-    else:
-        flash("verifique sus datos por fabor por favor")
-        return render_template("vistas/inicio.html")
 
 
 
@@ -686,7 +691,7 @@ def log():
   
     if usuario == "USFA@2021" and palabra_secreta == "123" :
         
-        return redirect("/")
+        return redirect("/indexaa")
     elif usuario == "USFA@2022" and palabra_secreta == "1234" :
         return redirect("/indexb%20")
 
